@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Ticket Counter - PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <h2>🚉 Train Ticket Counter</h2>
+  <p><b>Issuing Station:</b> MGR Chennai Central (MAS)</p>
+
+  <label for="toStation">Destination:</label>
+  <select id="toStation">
+    <option value="">-- Select Destination --</option>
+  </select>
+
+  <br><br>
+  <button onclick="issueTicket()">🎫 Get Ticket</button>
+  <button onclick="downloadTicket()">📥 Download Ticket</button>
+
+  <div id="ticket"></div>
+
+  <h3>👥 Passengers in Queue</h3>
+  <ul id="queue"></ul>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</body>
+  </html>
